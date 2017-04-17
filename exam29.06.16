@@ -1,0 +1,38 @@
+import re
+def func1():
+    a = open('C:\\Users\\student\\Desktop\\exam.txt', 'r', encoding = 'UTF-8')
+    f = a.read()
+    a.close()
+    return f
+
+def func2(f):
+    regex ='[А-Я]\. [А-ЯЁ][а-яё]+'
+    c = re.findall(regex, f)
+    for regex in c:
+        n = ', '.join(c)
+    if c:
+        print('Первое задание: ',n)
+        
+def func3(f):
+    regex1 ='[А-Я]\. [А-Я]\. [А-ЯЁ][а-яё]+'
+    c1 = re.findall(regex1, f)
+    for regex1 in c1:
+        n1 = ', '.join(c1)
+    if c1:
+        print('\n','Второе задание(ч.1): ',n1)
+        
+def func4(f):
+    regex2 ='[А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+'
+    c2 = re.findall(regex2, f)
+    for regex2 in c2:
+        n2 = ', '.join(c2)
+    if c2:
+        print('\n','Второе задание(ч.2): ', n2)
+        
+def main():
+    q = func1()
+    func2(q)
+    func3(q)
+    func4(q)
+if __name__=='__main__':
+    main()
